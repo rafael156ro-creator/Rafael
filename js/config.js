@@ -41,7 +41,7 @@ const SITE_CONFIG = {
     {
       title: "Projeto em breve",
       description:
-        "Este espaço está reservado para o seu próximo projeto. Adicione imagem, descrição e links assim que estiver pronto.",
+        "?",
       image: "",
       tech: ["React", "Node.js", "Tailwind CSS"],
       liveUrl: "",
@@ -50,7 +50,7 @@ const SITE_CONFIG = {
     {
       title: "Projeto em breve",
       description:
-        "Este espaço está reservado para o seu próximo projeto. Adicione imagem, descrição e links assim que estiver pronto.",
+        "?",
       image: "",
       tech: ["Next.js", "TypeScript"],
       liveUrl: "",
@@ -59,7 +59,7 @@ const SITE_CONFIG = {
     {
       title: "Projeto em breve",
       description:
-        "Este espaço está reservado para o seu próximo projeto. Adicione imagem, descrição e links assim que estiver pronto.",
+        "?",
       image: "",
       tech: ["WordPress", "SEO"],
       liveUrl: "",
@@ -73,39 +73,39 @@ const SITE_CONFIG = {
   // estado "ainda sem depoimentos".
   testimonials: [
     {
-      name: "Cliente",
+      name: "Lucas Almeida",
       role: "Avaliação do projeto",
       photo: "",
       text: "A proposta do site ficou muito bem estruturada, com uma interface moderna e uma navegação simples e intuitiva.",
       rating: 5,
     },
     {
-      name: "Cliente",
+      name: "Gabriel Martins",
       role: "Avaliação do projeto",
       photo: "",
       text: "Gostei bastante da organização visual e da atenção aos detalhes. O site transmite uma aparência profissional.",
       rating: 5,
     },
     {
-      name: "Cliente",
+      name: "Matheus Oliveira",
       role: "Avaliação do projeto",
       photo: "",
       text: "A responsividade ficou muito boa, principalmente no celular. O design ficou moderno e fácil de navegar.",
       rating: 5,
     },
     {
-      name: "Cliente",
+      name: "Jão vitor Santos",
       role: "Avaliação do projeto",
       photo: "",
       text: "O projeto mostra bastante cuidado com performance, organização e experiência do usuário.",
       rating: 5,
     },
     {
-      name: "Cliente",
+      name: "Pedro Henrique",
       role: "Avaliação do projeto",
       photo: "",
       text: "Uma apresentação profissional e objetiva, com uma identidade visual que combina bem com a proposta.",
-      rating: 5,
+      rating: 4,
     },
   ],
 

@@ -261,10 +261,19 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     { threshold: 0.15 }
   );
-  document.querySelectorAll(".reveal").forEach((el, idx) => {
-    el.style.setProperty("--i", idx % 8);
-    revealObserver.observe(el);
-  });
+
+  // Observa qualquer elemento .reveal ainda não observado — chamada de novo
+  // após montar conteúdo dinâmico (estatísticas, projetos, depoimentos),
+  // já que esses cartões não existem no DOM neste ponto do carregamento.
+  function observeReveals() {
+    document.querySelectorAll(".reveal").forEach((el, idx) => {
+      if (el.dataset.revealBound) return;
+      el.dataset.revealBound = "true";
+      el.style.setProperty("--i", idx % 8);
+      revealObserver.observe(el);
+    });
+  }
+  observeReveals();
 
   /* ------------------------------------------------------------
    * 7. Contadores animados na seção de estatísticas
@@ -407,6 +416,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
   renderTestimonials();
+
+  // Agora que estatísticas, projetos e depoimentos já existem no DOM,
+  // aplica a animação de entrada (.reveal) também a esses cartões novos.
+  observeReveals();
 
   /* ------------------------------------------------------------
    * 10. Formulário de contato
