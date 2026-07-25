@@ -11,10 +11,14 @@ rafael-portfolio/
 │   └── style.css        → todo o visual (tema escuro + azul)
 ├── js/
 │   ├── config.js         → ⭐ ÚNICO ARQUIVO QUE VOCÊ PRECISA EDITAR
-│   └── script.js          → lógica do site (não precisa mexer)
+│   ├── script.js          → lógica do site (não precisa mexer)
+│   └── minigame.js        → lógica do jogo de bolinhas (não precisa mexer)
 └── assets/
     ├── favicon.svg
-    └── og-image.svg       → imagem exibida ao compartilhar o link
+    ├── og-image.svg       → imagem exibida ao compartilhar o link
+    ├── rafael-foto.jpg    → sua foto na seção Sobre
+    └── audio/
+        └── roblox-doors-elevator-music-556237.mp3  ← coloque seu .mp3 aqui
 ```
 
 ## Como personalizar
@@ -32,13 +36,7 @@ Nenhuma outra alteração é necessária — o próprio `script.js` lê o `confi
 
 ## Trocar a foto de perfil
 
-Na seção "Sobre" (`index.html`, bloco `.about-portrait`), troque o `<span class="initials">RR</span>` por uma tag `<img>` com sua foto, por exemplo:
-
-```html
-<div class="about-portrait reveal">
-  <img src="assets/sua-foto.jpg" alt="Rafael Rodrigues" style="width:100%;height:100%;object-fit:cover;">
-</div>
-```
+A foto atual está em `assets/rafael-foto.jpg` e já é usada na seção "Sobre". Para trocá-la, basta substituir esse arquivo por uma nova imagem com o mesmo nome (ou editar o caminho `src` da tag `<img>` dentro do bloco `.about-portrait` em `index.html`).
 
 ## Imagem de compartilhamento (Open Graph)
 
@@ -59,8 +57,18 @@ Qualquer serviço de hospedagem estática funciona, sem necessidade de servidor:
 Antes de publicar, atualize também:
 - A tag `<link rel="canonical">` e as tags `og:url` em `index.html` com o domínio real.
 
-## Recursos incluídos
+## Mini Game (Relax Zone)
 
+O site tem uma seção `#minigame` com um jogo de bolinhas quicando (física em Canvas 2D puro, sem bibliotecas). Arquivos:
+
+- `js/minigame.js` → toda a lógica do jogo (física, colisões, botões, player de áudio). Fica separado de `js/script.js` de propósito, para não arriscar o resto do site caso algo precise ser ajustado nele.
+- Estilos do jogo estão no final de `css/style.css`, na seção "MINI GAME / RELAX ZONE".
+
+**Música:** o player busca o arquivo em `assets/audio/roblox-doors-elevator-music-556237.mp3`. Coloque seu arquivo `.mp3` exatamente nessa pasta com esse nome (há um `.txt` de lembrete lá dentro — pode apagá-lo depois). O caminho é relativo, então funciona tanto localmente quanto publicado no GitHub Pages. A música **não** toca sozinha — só começa quando o visitante clica no botão de play, respeitando o bloqueio de autoplay dos navegadores.
+
+Se o arquivo `.mp3` não existir ainda, o site continua funcionando normalmente — ao clicar em play, aparece um aviso discreto abaixo do jogo avisando que o áudio não foi encontrado, sem gerar erro quebrado no console.
+
+## Recursos incluídos
 - Tema escuro com detalhes em azul/ciano e visual tecnológico
 - Totalmente responsivo (mobile, tablet, desktop)
 - Navbar fixa com destaque da seção ativa (scroll spy)

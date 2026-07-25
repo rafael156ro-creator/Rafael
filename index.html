@@ -66,6 +66,7 @@
         <a href="#sobre">Sobre</a>
         <a href="#servicos">Serviços</a>
         <a href="#projetos">Projetos</a>
+        <a href="#minigame">Mini Game</a>
         <a href="#contato">Contato</a>
       </nav>
 
@@ -404,6 +405,63 @@
       </div>
     </section>
 
+    <!-- ============ MINI GAME ============ -->
+    <section class="section" id="minigame">
+      <div class="tech-bg" aria-hidden="true">
+        <div class="glow-orb" style="width:340px;height:340px;background:#3b7dff;top:-80px;right:-60px;"></div>
+        <div class="glow-orb" style="width:280px;height:280px;background:#a78bfa;bottom:-80px;left:-40px;animation-delay:-8s;"></div>
+      </div>
+
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow reveal">// mini game</span>
+          <h2 class="section-title reveal">Relax Zone — bolinhas quicando</h2>
+          <p class="section-desc reveal">
+            Uma pausa divertida no meio do portfólio. Clique, arraste e solte as bolinhas —
+            e ligue a música se quiser embalar o momento.
+          </p>
+        </div>
+
+        <div class="game-panel card reveal">
+          <div class="game-toolbar">
+            <div class="game-toolbar-group">
+              <button class="btn btn-outline btn-sm" id="game-add-ball" type="button">
+                <i class="fa-solid fa-circle-plus" aria-hidden="true"></i> Adicionar bolinha
+              </button>
+              <button class="btn btn-outline btn-sm" id="game-clear" type="button">
+                <i class="fa-solid fa-eraser" aria-hidden="true"></i> Limpar
+              </button>
+              <button class="btn btn-outline btn-sm" id="game-restart" type="button">
+                <i class="fa-solid fa-rotate-left" aria-hidden="true"></i> Reiniciar
+              </button>
+            </div>
+
+            <div class="game-audio-controls">
+              <button class="icon-btn" id="game-play-pause" type="button" aria-label="Reproduzir música" aria-pressed="false">
+                <i class="fa-solid fa-play" aria-hidden="true"></i>
+              </button>
+              <button class="icon-btn" id="game-mute" type="button" aria-label="Ativar ou desativar som" aria-pressed="false">
+                <i class="fa-solid fa-volume-high" aria-hidden="true"></i>
+              </button>
+              <input type="range" id="game-volume" min="0" max="100" value="50" aria-label="Volume da música">
+            </div>
+          </div>
+
+          <div class="game-canvas-wrap" id="game-canvas-wrap">
+            <canvas id="game-canvas" aria-label="Área do mini game de bolinhas quicando" role="img"></canvas>
+            <p class="game-hint" aria-hidden="true">toque ou arraste para interagir</p>
+          </div>
+
+          <p class="game-audio-status" id="game-audio-status" role="status" aria-live="polite"></p>
+
+          <!-- Áudio local do projeto — ver README para instruções de onde colocar o arquivo -->
+          <audio id="game-audio" preload="none" loop>
+            <source src="assets/audio/roblox-doors-elevator-music-556237.mp3" type="audio/mpeg">
+          </audio>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <!-- ============ FOOTER ============ -->
@@ -428,6 +486,7 @@
             <li><a href="#sobre">Sobre</a></li>
             <li><a href="#servicos">Serviços</a></li>
             <li><a href="#projetos">Projetos</a></li>
+            <li><a href="#minigame">Mini Game</a></li>
             <li><a href="#contato">Contato</a></li>
           </ul>
         </div>
@@ -455,5 +514,6 @@
 
   <script src="js/config.js"></script>
   <script src="js/script.js"></script>
+  <script src="js/minigame.js"></script>
 </body>
 </html>
